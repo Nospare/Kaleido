@@ -106,8 +106,8 @@ class PlotlyScope(BaseScope):
         :return: image bytes
         """
         # TODO: validate args
-        from plotly.graph_objects import Figure
-        if isinstance(figure, Figure):
+        from plotly.graph_objs._figure import BaseFigure, Figure
+        if isinstance(figure, (BaseFigure, Figure)):
             figure = figure.to_dict()
 
         # Apply default format and scale
